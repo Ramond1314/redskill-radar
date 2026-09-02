@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1040" role="img" aria-label="小红书视觉导演卡通化封面">
+  <image href="../小红书视觉导演.webp" x="0" y="0" width="800" height="1040" preserveAspectRatio="xMidYMid slice"/>
+  <path d="M92 347h616v585H92z" fill="#17120f" opacity=".94"/>
+  <path d="m142 398 50-28 42 45-52 30zM604 390l45 31-26 51-50-32zM137 825l60-22 18 58-62 18z" fill="#ffe044"/>
+  <path d="M225 841v-208c0-104 68-180 175-180s175 76 175 180v208z" fill="#f8c734"/>
+  <path d="M267 535c11-92 64-135 133-135 77 0 124 55 133 136l-54-32-45 29-43-46-48 47-40-28z" fill="#2f211b"/>
+  <path d="M299 585h42M460 585h42" stroke="#211713" stroke-width="12" stroke-linecap="round"/><circle cx="329" cy="584" r="7" fill="#211713"/><circle cx="481" cy="584" r="7" fill="#211713"/>
+  <path d="M350 653c24 16 49 16 74 0" fill="none" stroke="#b63d27" stroke-width="8" stroke-linecap="round"/>
+  <path d="M148 902h504" stroke="#ff4330" stroke-width="18"/><rect x="303" y="718" width="194" height="128" rx="12" fill="#fff5bc" stroke="#ff4330" stroke-width="10"/><path d="m334 780 42-45 30 26 47-55 44 72" fill="none" stroke="#1d6b72" stroke-width="12"/>
+  <path d="M579 688h96v72h-96z" fill="#ff4330"/><path d="m590 704 75 40M665 704l-75 40" stroke="#fff5bc" stroke-width="8"/>
+</svg>

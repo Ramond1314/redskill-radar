@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1040" role="img" aria-label="创作者外挂卡通化封面">
+  <image href="../all/skill-1137.webp" x="0" y="0" width="800" height="1040" preserveAspectRatio="xMidYMid slice"/>
+  <rect x="74" y="252" width="652" height="676" rx="42" fill="#c0b1a8" opacity=".97"/>
+  <path d="M205 858V596c0-119 76-195 195-195s195 76 195 195v262z" fill="#d96862"/>
+  <path d="M251 492c11-93 68-142 149-142 87 0 141 56 152 147l-59-36-47 35-48-47-56 48-46-35z" fill="#292936"/>
+  <path d="M274 561h59M471 561h59" stroke="#272530" stroke-width="13" stroke-linecap="round"/><rect x="272" y="532" width="72" height="51" rx="14" fill="none" stroke="#272530" stroke-width="10"/><rect x="461" y="532" width="72" height="51" rx="14" fill="none" stroke="#272530" stroke-width="10"/><path d="M344 554h117" stroke="#272530" stroke-width="9"/><path d="M352 642c25 20 54 20 80 0" fill="none" stroke="#a74649" stroke-width="9" stroke-linecap="round"/>
+  <rect x="153" y="719" width="494" height="143" rx="16" fill="#fff6e9" stroke="#d96862" stroke-width="10"/><path d="M190 761h242M190 797h330" stroke="#6d5960" stroke-width="13"/><path d="m545 748 67 28-67 29z" fill="#f0ba39"/>
+  <path d="m103 367 85-48 36 74-85 45z" fill="#f0ba39"/><path d="m606 339 76 26-24 81-78-27z" fill="#d96862"/>
+</svg>

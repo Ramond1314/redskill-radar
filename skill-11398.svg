@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1040" role="img" aria-label="创作者管理看板卡通化封面">
+  <image href="../all/skill-11398.webp" x="0" y="0" width="800" height="1040" preserveAspectRatio="xMidYMid slice"/>
+  <rect x="170" y="380" width="630" height="660" rx="34" fill="#f1eee6" opacity=".97"/>
+  <path d="M284 900V664c0-108 74-185 171-185s171 77 171 185v236z" fill="#d85b48"/>
+  <path d="M324 569c15-83 63-123 131-123 74 0 122 52 134 126l-50-32-42 31-45-43-50 42-43-29z" fill="#3b3030"/>
+  <path d="M344 620h49M487 620h49" stroke="#392b2a" stroke-width="11" stroke-linecap="round"/><circle cx="368" cy="619" r="7" fill="#392b2a"/><circle cx="512" cy="619" r="7" fill="#392b2a"/>
+  <path d="M413 689c25 18 49 18 74 0" fill="none" stroke="#a6443e" stroke-width="8" stroke-linecap="round"/>
+  <rect x="229" y="802" width="465" height="170" rx="13" fill="#fffdf5" stroke="#c75b47" stroke-width="10"/><path d="M262 842h180M262 881h284M262 920h124" stroke="#87766d" stroke-width="12"/><path d="m586 842 69 35-69 35z" fill="#d85b48"/>
+  <path d="m195 462 65-38 34 61-65 38z" fill="#d85b48"/><path d="m667 439 69-26 26 70-68 26z" fill="#d8a83f"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1040" role="img" aria-label="Industry-wiki 卡通化封面">
+  <image href="../all/skill-2763.webp" x="0" y="0" width="800" height="1040" preserveAspectRatio="xMidYMid slice"/>
+  <path d="M380 422h420v618H380z" fill="#111923" opacity=".96"/>
+  <path d="M420 901V652c0-113 71-189 169-189s169 76 169 189v249z" fill="#ec6b32"/>
+  <path d="M456 548c14-90 64-133 132-133 75 0 125 54 139 137l-48-34-46 34-47-46-51 46-44-30z" fill="#202e40"/>
+  <path d="M472 606h50M622 606h50" stroke="#17202e" stroke-width="12" stroke-linecap="round"/><circle cx="497" cy="605" r="7" fill="#17202e"/><circle cx="647" cy="605" r="7" fill="#17202e"/>
+  <path d="M552 673c25 18 51 18 76 0" fill="none" stroke="#a84531" stroke-width="9" stroke-linecap="round"/>
+  <rect x="431" y="758" width="342" height="164" rx="10" fill="#273f59" stroke="#f3f0e7" stroke-width="9"/><path d="M461 799h177M461 834h241M461 869h136" stroke="#f3f0e7" stroke-width="12" opacity=".86"/><path d="m390 474 86-34 30 69-88 34z" fill="#ee6a30"/>
+</svg>

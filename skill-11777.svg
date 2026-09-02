@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1040" role="img" aria-label="AI 人生副驾系统卡通化封面">
+  <image href="../all/skill-11777.webp" x="0" y="0" width="800" height="1040" preserveAspectRatio="xMidYMid slice"/>
+  <path d="M0 0h400v520H0z" fill="#5f2831" opacity=".96"/>
+  <path d="M72 458V281c0-92 63-151 158-151s158 59 158 151v177z" fill="#3b8791"/>
+  <path d="M111 207c12-71 57-106 119-106 67 0 111 43 121 108l-43-26-39 26-40-35-43 36-37-25z" fill="#202f3c"/>
+  <path d="M130 255h42M244 255h42" stroke="#18303c" stroke-width="10" stroke-linecap="round"/><circle cx="147" cy="254" r="6" fill="#18303c"/><circle cx="262" cy="254" r="6" fill="#18303c"/><path d="M183 316c20 15 41 15 62 0" fill="none" stroke="#ba554b" stroke-width="8" stroke-linecap="round"/>
+  <path d="M53 430h312" stroke="#f1b93a" stroke-width="15"/><rect x="166" y="364" width="126" height="83" rx="18" fill="#e6f1e8"/><circle cx="206" cy="405" r="12" fill="#3b8791"/><circle cx="251" cy="405" r="12" fill="#3b8791"/><path d="M211 428h36" stroke="#3b8791" stroke-width="7" stroke-linecap="round"/>
+  <path d="M354 94 399 57l39 47-47 36z" fill="#f1b93a"/><path d="m50 68 50-31 30 52-49 30z" fill="#3b8791"/>
+</svg>

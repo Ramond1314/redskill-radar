@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1040" role="img" aria-label="zhangmofanhot 卡通化封面">
+  <image href="../all/skill-10109.webp" x="0" y="0" width="800" height="1040" preserveAspectRatio="xMidYMid slice"/>
+  <path d="M340 120h460v920H340z" fill="#b9d5d2" opacity=".96"/>
+  <path d="M369 175h405v36H369zM369 230h342v18H369z" fill="#274b57" opacity=".72"/>
+  <path d="M432 900V610c0-112 78-193 174-193s174 81 174 193v290z" fill="#ef7c3c"/>
+  <path d="M470 515c14-91 63-131 135-131 75 0 122 48 137 134l-47-37-54 35-47-45-46 44-48-29z" fill="#2b3b50"/>
+  <path d="M490 568h48M629 568h48" stroke="#223643" stroke-width="12" stroke-linecap="round"/><circle cx="515" cy="566" r="7" fill="#223643"/><circle cx="653" cy="566" r="7" fill="#223643"/>
+  <path d="M548 635c24 19 51 19 76 0" fill="none" stroke="#bc4731" stroke-width="9" stroke-linecap="round"/>
+  <path d="M387 915h386" stroke="#2f6770" stroke-width="20"/><path d="M412 780h63v135h-63zM510 729h63v186h-63zM608 805h63v110h-63z" fill="#2f6770"/><path d="M414 953c73-46 146-50 221-4" fill="none" stroke="#f5bb3d" stroke-width="16"/>
+  <path d="M364 366h104v54H364z" fill="#f5bb3d"/><path d="m381 379 70 26" stroke="#274b57" stroke-width="8"/>
+</svg>

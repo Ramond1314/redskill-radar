@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1040" role="img" aria-label="Codex 自定义提示词卡通化封面">
+  <image href="../all/skill-2837.webp" x="0" y="0" width="800" height="1040" preserveAspectRatio="xMidYMid slice"/>
+  <rect x="72" y="330" width="656" height="690" rx="36" fill="#0c1522" opacity=".96"/>
+  <path d="M92 430h616M92 470h616M92 510h616M92 550h616" stroke="#27415b" stroke-width="2" opacity=".7"/>
+  <path d="M214 790v-158c0-106 72-173 186-173s186 67 186 173v158z" fill="#e35d35"/>
+  <path d="M248 611c0-94 63-151 152-151s152 57 152 151v38H248z" fill="#f1b483"/>
+  <path d="M261 555c22-83 80-119 146-119 72 0 121 43 142 121l-39-24-44 30-70-44-64 40-42-29z" fill="#283a52"/>
+  <path d="M296 593h54v38h-54zM450 593h54v38h-54z" fill="none" stroke="#162132" stroke-width="11"/><path d="M350 610h100" stroke="#162132" stroke-width="9"/>
+  <circle cx="322" cy="613" r="7" fill="#162132"/><circle cx="478" cy="613" r="7" fill="#162132"/>
+  <path d="M364 674c23 17 49 17 72 0" fill="none" stroke="#ad4b3e" stroke-width="8" stroke-linecap="round"/>
+  <path d="M151 824h498l-44 128H195z" fill="#1f5a78"/><rect x="195" y="848" width="410" height="70" rx="10" fill="#b8dddf"/><path d="m237 878 46-20 20 19 39-34 46 46 49-27 51 26" fill="none" stroke="#ef6338" stroke-width="10"/><path d="M166 952h468" stroke="#ef6338" stroke-width="18"/>
+  <path d="m107 722 56-44 48 46-55 47zM590 727l67-48 41 51-64 44z" fill="#ef6338"/>
+</svg>

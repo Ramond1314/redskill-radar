@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1040" role="img" aria-label="可编辑前端幻灯片 PPT 卡通化封面">
+  <image href="../all/skill-164.webp" x="0" y="0" width="800" height="1040" preserveAspectRatio="xMidYMid slice"/>
+  <rect x="140" y="264" width="530" height="580" rx="28" fill="#151e3b" opacity=".95"/>
+  <path d="M207 708v-191c0-103 77-172 187-172s187 69 187 172v191z" fill="#e05c42"/>
+  <path d="M257 478c15-80 68-119 138-119 75 0 126 49 142 122l-54-30-46 33-45-44-52 43-47-28z" fill="#7c433d"/>
+  <path d="M275 532h54M453 532h54" stroke="#321f2d" stroke-width="11" stroke-linecap="round"/><circle cx="301" cy="531" r="7" fill="#321f2d"/><circle cx="479" cy="531" r="7" fill="#321f2d"/>
+  <path d="M356 602c25 18 52 18 77 0" fill="none" stroke="#a84438" stroke-width="9" stroke-linecap="round"/>
+  <rect x="201" y="712" width="336" height="175" rx="10" fill="#e9eff8" transform="rotate(-7 369 799)"/><path d="M241 778h166M241 816h116" stroke="#243b6b" stroke-width="15"/><path d="m476 750 38-29 24 54-39 29z" fill="#f4bb2f"/>
+  <path d="m119 760 78-35 27 60-77 35z" fill="#ef6b48"/><path d="m600 756 71-38 31 59-72 40z" fill="#f4bb2f"/>
+</svg>
