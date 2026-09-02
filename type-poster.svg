@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1040" role="img" aria-label="视觉设计类抽象封面">
+  <rect width="800" height="1040" fill="#f15a24"/>
+  <path d="M-60 172 191 45l113 113L48 295z" fill="#f6bf39"/>
+  <path d="m500-28 355 154-93 197-349-147z" fill="#2c4d58"/>
+  <rect x="139" y="239" width="500" height="367" fill="#f5f0e8" transform="rotate(-7 389 422)"/>
+  <path d="m205 477 98-168 61 43 91-95 121 173" fill="none" stroke="#203a34" stroke-width="25" stroke-linejoin="bevel"/>
+  <path d="m84 669 196-28 36 133-197 28z" fill="#203a34"/>
+  <path d="m482 707 179-112 78 98-180 120z" fill="#f6bf39"/>
+  <path d="M97 896c95-52 176-56 261 2s174 55 344-8" fill="none" stroke="#f5f0e8" stroke-width="19" stroke-linecap="round"/>
+  <path d="m620 429 35-76 58 24-34 77z" fill="#f15a24"/>
+  <circle cx="108" cy="100" r="19" fill="#f5f0e8"/><circle cx="163" cy="100" r="10" fill="#203a34"/>
+</svg>

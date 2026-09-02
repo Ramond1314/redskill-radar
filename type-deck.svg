@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1040" role="img" aria-label="研究与演示类抽象封面">
+  <rect width="800" height="1040" fill="#2c4d58"/>
+  <path d="M-55 154 237 36l183 93-295 130z" fill="#f15a24"/>
+  <path d="m468 0 392 90-44 206-391-94z" fill="#d6b760"/>
+  <rect x="99" y="248" width="552" height="322" fill="#f4efe6" transform="rotate(4 375 408)"/>
+  <rect x="139" y="291" width="212" height="176" fill="#dce4df" transform="rotate(4 245 379)"/>
+  <path d="m157 432 73-73 44 39 53-82 56 56" fill="none" stroke="#2c4d58" stroke-width="18" stroke-linecap="square"/>
+  <rect x="397" y="305" width="190" height="30" fill="#2c4d58"/><rect x="397" y="356" width="147" height="19" fill="#2c4d58" opacity=".68"/><rect x="397" y="393" width="173" height="19" fill="#2c4d58" opacity=".42"/>
+  <path d="m70 700 175-110 98 54-175 112z" fill="#e5d8c9"/>
+  <path d="m481 661 186-72 74 115-184 75z" fill="#f15a24"/>
+  <path d="M108 888h587" stroke="#f6f1e9" stroke-width="10" stroke-dasharray="5 25"/>
+  <path d="m148 822 91-33 34 91-91 33z" fill="#d6b760"/>
+  <path d="m331 778 128-53 33 92-127 53z" fill="#dce4df"/>
+</svg>

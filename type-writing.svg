@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1040" role="img" aria-label="写作类抽象封面">
+  <rect width="800" height="1040" fill="#75614f"/>
+  <path d="M-70 320 275 70l160 85-355 270z" fill="#ee5a28"/>
+  <path d="m510 0 360 188-105 156-361-191z" fill="#a9937b" opacity=".72"/>
+  <path d="m66 746 322-68 253 143-354 128z" fill="#dfd4c4"/>
+  <path d="M103 650c110-61 191-45 274 15s161 75 305 14" fill="none" stroke="#f8f4ed" stroke-width="18" stroke-linecap="round"/>
+  <path d="M125 184 642 98 687 373 170 461z" fill="#f5f1e9" transform="rotate(-5 400 280)"/>
+  <path d="m180 240 342-57M194 284l261-43M205 330l315-53" stroke="#25221f" stroke-width="15" stroke-linecap="square" opacity=".86"/>
+  <path d="m543 478 101-80 51 47-102 84z" fill="#f8bd31"/>
+  <path d="m87 531 134-26 16 74-135 26z" fill="#2e5256"/>
+  <path d="m566 726 79-131 38 22-79 132z" fill="#ee5a28"/>
+  <g fill="#25221f" opacity=".8"><rect x="105" y="900" width="28" height="28"/><rect x="145" y="900" width="28" height="28"/><rect x="185" y="900" width="28" height="28"/><rect x="225" y="900" width="28" height="28"/></g>
+  <path d="M68 1000c103-32 177-26 266 1" fill="none" stroke="#f8f4ed" stroke-width="7" stroke-dasharray="5 18"/>
+</svg>

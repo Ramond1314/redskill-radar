@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1040" role="img" aria-label="金融决策类抽象封面">
+  <rect width="800" height="1040" fill="#203a34"/>
+  <path d="M-75 235 220 41l119 147L38 376z" fill="#d7ad47"/>
+  <path d="m531-35 311 139-53 220-334-159z" fill="#ee5a28"/>
+  <path d="M96 752V476h63v276zM205 752V332h63v420zM314 752V548h63v204zM423 752V254h63v498zM532 752V397h63v355zM641 752V300h63v452z" fill="#f5f0e8"/>
+  <path d="M78 807h644" stroke="#d7ad47" stroke-width="13"/>
+  <path d="M100 401c75 33 132 17 191-61 63-84 118-93 180-34 57 54 117 54 224-45" fill="none" stroke="#ee5a28" stroke-width="21" stroke-linecap="round"/>
+  <path d="m659 135 45 15-21 42-45-15z" fill="#f5f0e8"/>
+  <path d="m113 882 110-44 42 102-110 45z" fill="#3d6d70"/>
+  <path d="m425 902 122-42 40 94-123 44z" fill="#d7ad47"/>
+</svg>

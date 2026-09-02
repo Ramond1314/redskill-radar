@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1040" role="img" aria-label="数据图表类抽象封面">
+  <rect width="800" height="1040" fill="#3d6d70"/>
+  <path d="M-55 248 245 62l83 117L29 380z" fill="#f6bf39"/>
+  <path d="m516-22 328 151-69 190-330-163z" fill="#f15a24"/>
+  <path d="M97 768 155 389l76 12-59 380zM253 768l58-508 79 9-59 499zM415 768l57-312 79 14-56 298zM574 768l54-437 79 9-55 428z" fill="#f5f0e8"/>
+  <path d="M70 820h622" stroke="#182f35" stroke-width="16"/>
+  <path d="M119 311c105 87 183 114 275 57 92-57 160-49 293 52" fill="none" stroke="#e5a34f" stroke-width="20" stroke-linecap="round"/>
+  <path d="m134 245 22-61 65 20-21 62z" fill="#f15a24"/>
+  <path d="m649 850 72-41 36 62-74 40z" fill="#f6bf39"/>
+  <circle cx="122" cy="925" r="18" fill="#f5f0e8"/><circle cx="179" cy="925" r="12" fill="#f6bf39"/><circle cx="691" cy="930" r="23" fill="#f15a24"/>
+</svg>
