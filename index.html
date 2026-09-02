@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f15a24" />
+    <title>REDSkill Radar · 小红书 Skill 排名看板</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20260902-note-covers-v5" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="REDSkill Radar 首页">
+          <span class="brand-mark" aria-hidden="true">R</span>
+          <span>
+            <strong>REDSkill Radar</strong>
+            <small>小红书 Skill 排名看板</small>
+          </span>
+        </a>
+        <div class="topbar-actions">
+          <span class="sync-state"><span class="sync-dot"></span><span id="syncLabel">已同步</span></span>
+          <button class="button button-dark" id="refreshButton" type="button">
+            <span class="button-icon" aria-hidden="true">↻</span>刷新数据
+          </button>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero-section">
+          <div class="hero-copy">
+            <p class="eyebrow">WEEKLY INTELLIGENCE / 2026</p>
+            <h1>看见正在<br /><em>被使用的能力</em></h1>
+            <p class="hero-description">把 REDSkill 的热度、用途和可交付效果放在同一个视图里。用数据找趋势，用封面判断是否值得装。</p>
+            <div class="hero-actions">
+              <a class="button button-dark" href="#discover">浏览热门 Skill <span aria-hidden="true">↘</span></a>
+              <span class="hero-tip">每周更新 · 支持封面筛选</span>
+            </div>
+            <div class="hero-meta">
+              <span>数据日 <strong id="dataDate">—</strong></span>
+              <span class="meta-divider"></span>
+              <span>更新于 <strong id="generatedAt">—</strong></span>
+            </div>
+          </div>
+          <div class="hero-visual" aria-label="REDSkill 热度趋势视觉预览">
+            <div class="hero-grid"></div>
+            <div class="hero-orbit orbit-one"></div>
+            <div class="hero-orbit orbit-two"></div>
+            <div class="hero-spark spark-one">✦</div>
+            <div class="hero-spark spark-two">＋</div>
+            <div class="hero-label label-top">TOP 100</div>
+            <div class="hero-label label-bottom">SKILLS IN MOTION</div>
+            <div class="hero-core"><span>S</span></div>
+          </div>
+        </section>
+
+        <section class="stats-row" aria-label="榜单概览">
+          <article class="stat-card stat-card-accent">
+            <span class="stat-label">榜单 Skill</span>
+            <strong class="stat-value" id="totalSkills">—</strong>
+            <span class="stat-note">三榜去重后的当前快照</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">榜首使用人数</span>
+            <strong class="stat-value" id="topUsers">—</strong>
+            <span class="stat-note" id="topSkillName">—</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">近 7 天新增调用</span>
+            <strong class="stat-value" id="newSkills">—</strong>
+            <span class="stat-note">前 100 技能累计新增</span>
+          </article>
+          <article class="stat-card stat-card-dark">
+            <span class="stat-label">当前视图</span>
+            <strong class="stat-value" id="visibleCount">—</strong>
+            <span class="stat-note">匹配当前筛选条件</span>
+          </article>
+        </section>
+
+        <section class="workspace-section" id="discover">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">DISCOVER / RANKING</p>
+              <h2>热门技能地图</h2>
+            </div>
+            <p class="section-intro">点击任意卡片，查看使用方式、预期效果和可复制的调用示例。</p>
+          </div>
+
+          <div class="trend-rail" id="trendRail" aria-label="本周上升 Skill"></div>
+
+          <div class="control-bar" role="search">
+            <label class="search-control">
+              <span class="sr-only">搜索 Skill</span>
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <input id="searchInput" type="search" placeholder="搜索名称、用途或关键词" autocomplete="off" />
+              <kbd>⌘ K</kbd>
+            </label>
+            <div class="control-group" role="tablist" aria-label="选择榜单">
+              <button class="tab-button is-active" type="button" data-board="use" role="tab" aria-selected="true">使用人数</button>
+              <button class="tab-button" type="button" data-board="new" role="tab" aria-selected="false">7天新增</button>
+              <button class="tab-button" type="button" data-board="today" role="tab" aria-selected="false">当日新增</button>
+            </div>
+            <label class="select-control">
+              <span class="sr-only">筛选类别</span>
+              <select id="categorySelect">
+                <option value="all">全部类别</option>
+              </select>
+              <span class="select-chevron" aria-hidden="true">⌄</span>
+            </label>
+            <label class="select-control sort-control">
+              <span class="sr-only">排序方式</span>
+              <select id="sortSelect">
+                <option value="rank">榜单默认</option>
+                <option value="users">使用人数</option>
+                <option value="new">7天增速</option>
+                <option value="likes">封面点赞</option>
+                <option value="collects">封面收藏</option>
+                <option value="cover">有封面优先</option>
+              </select>
+              <span class="select-chevron" aria-hidden="true">⌄</span>
+            </label>
+            <button class="filter-button" id="coverToggle" type="button" aria-pressed="false">有封面</button>
+            <button class="filter-button" id="favoriteFilter" type="button" aria-pressed="false">我的收藏</button>
+          </div>
+
+          <div class="insight-strip" id="insightStrip" aria-live="polite">
+            <span class="insight-icon" aria-hidden="true">✳</span>
+            <span id="insightText">正在读取榜单趋势…</span>
+            <span class="coverage-text" id="coverageText">封面图 —</span>
+          </div>
+
+          <div class="ranking-grid" id="rankingGrid" aria-live="polite"></div>
+          <div class="compare-bar" id="compareBar" hidden>
+            <div><strong id="compareCount">0 个 Skill</strong><span>最多选择 3 个进行横向比较</span></div>
+            <div class="compare-bar-actions"><button class="filter-button" id="clearCompare" type="button">清空</button><button class="button button-dark" id="compareNow" type="button">查看对比</button></div>
+          </div>
+          <div class="compare-panel" id="comparePanel" hidden></div>
+          <div class="empty-state" id="emptyState" hidden>
+            <div class="empty-mark">∅</div>
+            <h3>没有匹配的 Skill</h3>
+            <p>换一个关键词，或清除当前筛选条件。</p>
+          </div>
+        </section>
+
+        <section class="workflow-section">
+          <div class="workflow-copy">
+            <p class="eyebrow">FROM RANKING TO RESULT</p>
+            <h2>从热度，到可交付结果</h2>
+            <p>一条 Skill 是否值得使用，不只看它有多火。看它接收什么输入、交付什么产物，以及是否适合你的工作流。</p>
+          </div>
+          <div class="workflow-steps">
+            <div class="workflow-step"><span>01</span><strong>发现</strong><p>从累计使用和近期增速找到信号。</p></div>
+            <div class="workflow-step"><span>02</span><strong>理解</strong><p>查看触发条件、输入材料与限制。</p></div>
+            <div class="workflow-step"><span>03</span><strong>安装 &amp; 试用</strong><p>先在 Codex、WorkBuddy 等工具里安装 Skill，再复制示例指令跑一次真实任务。</p></div>
+            <div class="workflow-step"><span>04</span><strong>复盘</strong><p>记录结果，把有效 Skill 放进你的工具箱。</p></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div><strong>REDSkill Radar</strong><span>数据来自小红书 REDSkill 排行榜公开快照</span></div>
+        <a href="https://cowork.xiaohongshu.com/s/redskill-rank" target="_blank" rel="noreferrer">查看原榜单 ↗</a>
+      </footer>
+    </div>
+
+    <div class="modal-backdrop" id="modalBackdrop" hidden></div>
+    <aside class="detail-drawer" id="detailDrawer" aria-hidden="true" aria-labelledby="drawerTitle" role="dialog">
+      <div class="drawer-topbar">
+        <span class="drawer-kicker">SKILL DETAIL</span>
+        <button class="icon-button" id="closeDrawer" type="button" aria-label="关闭详情">×</button>
+      </div>
+      <div class="drawer-scroll">
+        <div class="drawer-visual" id="drawerVisual"></div>
+        <div class="drawer-heading">
+          <span class="rank-badge" id="drawerRank">#01</span>
+          <span class="category-tag" id="drawerCategory">—</span>
+          <h2 id="drawerTitle">—</h2>
+          <p id="drawerDescription">—</p>
+        </div>
+        <div class="drawer-stats">
+          <div><span>使用人数</span><strong id="drawerUsers">—</strong></div>
+          <div><span>累计调用</span><strong id="drawerUses">—</strong></div>
+          <div><span>近7天新增</span><strong id="drawerNew">—</strong></div>
+        </div>
+        <div class="detail-block">
+          <div class="detail-label">使用说明</div>
+          <p id="drawerHow">—</p>
+        </div>
+        <div class="detail-block install-block">
+          <div class="detail-label">怎么使用</div>
+          <p id="drawerInstall">先安装 Skill，再在对话中点名调用。</p>
+        </div>
+        <div class="detail-block">
+          <div class="detail-label">预期效果</div>
+          <p id="drawerEffect">—</p>
+        </div>
+        <div class="detail-block source-case" id="drawerCase" hidden>
+          <div class="detail-label">小红书封面来源</div>
+          <p><a id="drawerCaseLink" href="#" target="_blank" rel="noreferrer"><span id="drawerCaseTitle">—</span> ↗</a><br><span id="drawerCaseStats">点赞 — · 收藏 —</span></p>
+        </div>
+        <div class="drawer-actions">
+          <button class="button button-light" id="toggleFavorite" type="button">收藏 Skill</button>
+          <button class="button button-light" id="toggleCompare" type="button">加入对比</button>
+          <button class="button button-dark" id="shareCardButton" type="button">生成小红书卡片 <span aria-hidden="true">↗</span></button>
+        </div>
+        <span class="action-feedback" id="shareFeedback" role="status" aria-live="polite"></span>
+        <div class="brief-grid" aria-label="Skill 交付字段">
+          <div class="brief-item"><span>输入 / 素材</span><p id="drawerInputs">—</p></div>
+          <div class="brief-item"><span>交付 / 交互</span><p id="drawerOutput">—</p></div>
+          <div class="brief-item"><span>关键约束</span><p id="drawerConstraints">—</p></div>
+          <div class="brief-item"><span>待确认项</span><p id="drawerUnknown">—</p></div>
+        </div>
+        <div class="prompt-block">
+          <div class="detail-label">可复制的调用示例</div>
+          <pre id="drawerPrompt"><code>—</code></pre>
+          <button class="button button-copy" id="copyPrompt" type="button">复制示例 <span aria-hidden="true">↗</span></button>
+          <span class="copy-feedback" id="copyFeedback" role="status" aria-live="polite"></span>
+        </div>
+        <a class="source-link" id="drawerSource" href="#" target="_blank" rel="noreferrer">查看原始 Skill 笔记 ↗</a>
+      </div>
+    </aside>
+
+    <script src="app.js?v=20260902-note-covers-v5" defer></script>
+  </body>
+</html>
