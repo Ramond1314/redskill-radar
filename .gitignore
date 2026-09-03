@@ -1,4 +1,7 @@
 .DS_Store
 node_modules/
 npm-debug.log*
-
+skillhub-scraped.json
+scripts/render_xhs_assets.py
+xhs-note-assets/
+xhs-note-assets.zip
