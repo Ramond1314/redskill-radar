@@ -63,6 +63,7 @@ const state = {
 const $ = (id) => document.getElementById(id);
 const escapeHtml = (value) => String(value ?? "").replace(/[&<>'"]/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;","\"":"&quot;"}[char]));
 const formatNum = (value) => {
+  if (value === null || value === undefined || value === "") return "—";
   const n = Number(value || 0);
   return n >= 10000 ? `${(n / 10000).toFixed(n >= 100000 ? 0 : 1)}万` : n.toLocaleString("zh-CN");
 };
@@ -77,6 +78,7 @@ const persistFavorites = () => {
 const isFavorite = (skill) => state.favorites.has(String(skill.skill_id));
 const isCompared = (skill) => state.compare.has(String(skill.skill_id));
 const getCategory = (skill) => {
+  if (skill.category) return skill.category;
   const matched = CATEGORY_RULES.find(([, rule]) => rule.test(`${skill.skill_name} ${skill.skill_description || ""}`));
   return matched ? matched[0] : "其他探索";
 };
@@ -274,13 +276,14 @@ const promptFor = (skill) => {
 };
 const boardItems = () => {
   const source = state.data || FALLBACK_DATA;
-  const base = state.board === "new" ? (source.newList || []) : state.board === "today" ? (source.todayList || []) : (source.useList || []);
+  const base = state.board === "new" ? (source.newList || []) : state.board === "today" ? (source.todayList || []) : state.board === "skillhub" ? (source.skillHubList || []) : (source.useList || []);
   if (base.length) return base;
   return source.useList || [];
 };
 const metricFor = (skill) => {
   if (state.board === "new") return { main: skill.new7_cnt || 0, label: "7天新增", sub: skill.cum_cnt || skill.use_cnt || 0, subLabel: "累计调用" };
   if (state.board === "today") return { main: skill.use_users || 0, label: "今日用户", sub: skill.use_cnt || 0, subLabel: "今日调用" };
+  if (state.board === "skillhub") return { main: skill.use_users, label: "使用人数", sub: skill.use_cnt, subLabel: "累计调用" };
   return { main: skill.use_users || 0, label: "使用人数", sub: skill.use_cnt || 0, subLabel: "累计调用" };
 };
 const getFiltered = () => {
@@ -307,7 +310,7 @@ const getFiltered = () => {
 const populateCategories = () => {
   const select = $("categorySelect");
   const source = state.data || FALLBACK_DATA;
-  const categories = [...new Set([...(source.useList || []), ...(source.newList || []), ...(source.todayList || [])].map(getCategory))].sort();
+  const categories = [...new Set([...(source.useList || []), ...(source.newList || []), ...(source.todayList || []), ...(source.skillHubList || [])].map(getCategory))].sort();
   select.innerHTML = `<option value="all">全部类别</option>${categories.map((category) => `<option value="${category}">${category}</option>`).join("")}`;
 };
 const renderTrendRail = () => {
@@ -330,7 +333,7 @@ const renderStats = () => {
   $("newSkills").textContent = newList.length ? formatNum(newList.reduce((total, skill) => total + Number(skill.new7_cnt || 0), 0)) : formatNum(useList.reduce((total, skill) => total + Number(skill.new7_cnt || 0), 0));
   $("dataDate").textContent = data.dataDate || "—";
   $("generatedAt").textContent = data.genTime || data.generatedAt || "—";
-  const all = data.allSkills || [...useList, ...(data.newList || []), ...(data.todayList || [])];
+  const all = data.allSkills || [...useList, ...(data.newList || []), ...(data.todayList || []), ...(data.skillHubList || [])];
   const coverCount = all.filter((skill) => skill.cover_url || skill.cover).length;
   const customCount = Math.max(0, all.length - coverCount);
   $("coverageText").textContent = all.length ? `封面 ${all.length}（真实 ${coverCount} · 定制 ${customCount}）` : "封面图 —";
@@ -340,7 +343,7 @@ const renderInsight = (items) => {
   const top = items[0];
   const metric = metricFor(top);
   const category = getCategory(top);
-  const text = state.board === "new" ? `近期上升信号：${top.skill_name} 近 7 天新增 ${formatNum(metric.main)} 次，集中在「${category}」方向。` : `当前视图榜首是 ${top.skill_name}，${metric.label} ${formatNum(metric.main)}；点击卡片可查看完整使用说明。`;
+  const text = state.board === "new" ? `近期上升信号：${top.skill_name} 近 7 天新增 ${formatNum(metric.main)} 次，集中在「${category}」方向。` : state.board === "skillhub" ? `SkillHub 公开条目已按类别整理；当前共 ${formatNum(items.length)} 个结果，点击卡片查看适用场景和调用示例。` : `当前视图榜首是 ${top.skill_name}，${metric.label} ${formatNum(metric.main)}；点击卡片可查看完整使用说明。`;
   $("insightText").textContent = text;
 };
 const renderCards = () => {
@@ -359,7 +362,7 @@ const renderCards = () => {
     const hasCover = Boolean(skill.cover_url || skill.cover);
     const cartoonized = Boolean(cartoonCoverFor(skill));
     const coverLabel = cartoonized ? "卡通化案例" : skill.cover_match === "search-related" ? "相关笔记" : "案例";
-    const caseStats = hasCover && (skill.cover_likes || skill.cover_collects) ? `${coverLabel} ${skill.cover_likes || "—"} 赞 · ${skill.cover_collects || "—"} 藏` : hasCover ? (cartoonized ? "卡通化案例图" : skill.cover_match === "search-related" ? "相关笔记封面" : "已有案例图") : "风格定制封面";
+    const caseStats = skill.source === "SkillHub" ? `SkillHub · ${skill.skillhub_tags?.slice(0, 2).join(" · ") || "公开条目"}` : hasCover && (skill.cover_likes || skill.cover_collects) ? `${coverLabel} ${skill.cover_likes || "—"} 赞 · ${skill.cover_collects || "—"} 藏` : hasCover ? (cartoonized ? "卡通化案例图" : skill.cover_match === "search-related" ? "相关笔记封面" : "已有案例图") : "风格定制封面";
     return `<article class="skill-card" tabindex="0" role="button" data-skill-id="${escapeHtml(skill.skill_id)}" aria-label="查看 ${escapeHtml(skill.skill_name)} 详情"><div>${previewMarkup(skill, rank)}</div><div class="skill-content"><div class="skill-topline"><span class="rank-number">#${String(rank).padStart(2, "0")}</span><span class="card-actions"><span class="category-tag">${escapeHtml(getCategory(skill))}</span><button class="card-icon-button favorite-button${isFavorite(skill) ? " is-active" : ""}" type="button" data-action="favorite" aria-label="${isFavorite(skill) ? "取消收藏" : "收藏"} ${escapeHtml(skill.skill_name)}">${isFavorite(skill) ? "★" : "☆"}</button></span></div><h3 class="skill-title">${escapeHtml(skill.skill_name)}</h3><p class="skill-desc">${escapeHtml(skill.skill_description || "暂无描述，打开详情查看可用方式。")}</p><div class="card-signals"><span>${caseStats}</span><button class="compare-toggle${isCompared(skill) ? " is-active" : ""}" type="button" data-action="compare" aria-pressed="${isCompared(skill)}">${isCompared(skill) ? "已加入对比" : "+ 加入对比"}</button></div><div class="skill-footer"><div class="skill-metrics"><span class="metric"><span>${metric.label}</span><strong>${state.board === "new" ? "+" : ""}${formatNum(metric.main)}</strong></span><span class="metric"><span>${metric.subLabel}</span><strong>${formatNum(metric.sub)}</strong></span></div><span class="open-detail">查看 ↗</span></div></div></article>`;
   }).join("");
   $("rankingGrid").querySelectorAll(".skill-card").forEach((card) => {
@@ -382,13 +385,13 @@ const renderCards = () => {
   }));
 };
 const findSkill = (id) => {
-  const preferred = state.board === "new" ? (state.data.newList || []) : state.board === "today" ? (state.data.todayList || []) : (state.data.useList || []);
-  const all = [...preferred, ...(state.data.useList || []), ...(state.data.newList || []), ...(state.data.todayList || [])];
+  const preferred = state.board === "new" ? (state.data.newList || []) : state.board === "today" ? (state.data.todayList || []) : state.board === "skillhub" ? (state.data.skillHubList || []) : (state.data.useList || []);
+  const all = [...preferred, ...(state.data.useList || []), ...(state.data.newList || []), ...(state.data.todayList || []), ...(state.data.skillHubList || [])];
   return all.find((skill) => Number(skill.skill_id) === Number(id));
 };
 const allSkills = () => {
   const data = state.data || FALLBACK_DATA;
-  return [...(data.useList || []), ...(data.newList || []), ...(data.todayList || [])].filter((skill, index, list) => list.findIndex((item) => item.skill_id === skill.skill_id) === index);
+  return [...(data.useList || []), ...(data.newList || []), ...(data.todayList || []), ...(data.skillHubList || [])].filter((skill, index, list) => list.findIndex((item) => item.skill_id === skill.skill_id) === index);
 };
 const renderActionFeedback = (message) => {
   const target = $("shareFeedback");
@@ -480,7 +483,7 @@ const openDrawer = (id) => {
   $("toggleCompare").textContent = isCompared(skill) ? "移出对比" : "加入对比";
   $("toggleCompare").classList.toggle("is-active", isCompared(skill));
   document.querySelector("#drawerPrompt code").textContent = promptFor(skill);
-  $("drawerSource").href = skill.note_id ? `https://www.xiaohongshu.com/explore/${skill.note_id}` : (state.data.sourceUrl || "https://cowork.xiaohongshu.com/s/redskill-rank");
+  $("drawerSource").href = skill.source === "SkillHub" ? (skill.note_url || "https://scys.com/skillhub/") : skill.note_id ? `https://www.xiaohongshu.com/explore/${skill.note_id}` : (state.data.sourceUrl || "https://cowork.xiaohongshu.com/s/redskill-rank");
   const caseBlock = $("drawerCase");
   const caseLink = $("drawerCaseLink");
   if (skill.cover_url || skill.cover) {
@@ -508,6 +511,7 @@ const loadData = async (showLoading = false) => {
         state.data.useList = applyCovers(state.data.useList);
         state.data.newList = applyCovers(state.data.newList);
         state.data.todayList = applyCovers(state.data.todayList);
+        state.data.skillHubList = applyCovers(state.data.skillHubList);
         state.data.allSkills = applyCovers(state.data.allSkills);
       }
     } catch {
