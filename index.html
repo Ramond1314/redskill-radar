@@ -33,7 +33,7 @@
           <div class="hero-copy">
             <p class="eyebrow">WEEKLY INTELLIGENCE / 2026</p>
             <h1>看见正在<br /><em>被使用的能力</em></h1>
-            <p class="hero-description">把 REDSkill 的热度、用途和可交付效果放在同一个视图里。用数据找趋势，用封面判断是否值得装。</p>
+            <p class="hero-description">把 REDSkill 与 SkillHub 的用途、分类和可交付效果放在同一个视图里。用榜单找趋势，用详情判断是否值得装。</p>
             <div class="hero-actions">
               <a class="button button-dark" href="#discover">浏览热门 Skill <span aria-hidden="true">↘</span></a>
               <span class="hero-tip">每周更新 · 支持封面筛选</span>
@@ -60,7 +60,7 @@
           <article class="stat-card stat-card-accent">
             <span class="stat-label">榜单 Skill</span>
             <strong class="stat-value" id="totalSkills">—</strong>
-            <span class="stat-note">三榜去重后的当前快照</span>
+            <span class="stat-note">REDSkill + SkillHub 公开快照</span>
           </article>
           <article class="stat-card">
             <span class="stat-label">榜首使用人数</span>
@@ -101,6 +101,7 @@
               <button class="tab-button is-active" type="button" data-board="use" role="tab" aria-selected="true">使用人数</button>
               <button class="tab-button" type="button" data-board="new" role="tab" aria-selected="false">7天新增</button>
               <button class="tab-button" type="button" data-board="today" role="tab" aria-selected="false">当日新增</button>
+              <button class="tab-button" type="button" data-board="skillhub" role="tab" aria-selected="false">SkillHub</button>
             </div>
             <label class="select-control">
               <span class="sr-only">筛选类别</span>
@@ -160,8 +161,11 @@
       </main>
 
       <footer class="footer">
-        <div><strong>REDSkill Radar</strong><span>数据来自小红书 REDSkill 排行榜公开快照</span></div>
-        <a href="https://cowork.xiaohongshu.com/s/redskill-rank" target="_blank" rel="noreferrer">查看原榜单 ↗</a>
+        <div><strong>REDSkill Radar</strong><span>数据来自小红书 REDSkill 与 SkillHub 公开快照</span></div>
+        <div class="footer-links">
+          <a href="https://cowork.xiaohongshu.com/s/redskill-rank" target="_blank" rel="noreferrer">查看 REDSkill 原榜单 ↗</a>
+          <a href="https://scys.com/skillhub/" target="_blank" rel="noreferrer">查看 SkillHub ↗</a>
+        </div>
       </footer>
     </div>
 
@@ -222,6 +226,6 @@
       </div>
     </aside>
 
-    <script src="app.js?v=20260902-note-covers-v5" defer></script>
+    <script src="app.js?v=20260903-skillhub-v1" defer></script>
   </body>
 </html>
